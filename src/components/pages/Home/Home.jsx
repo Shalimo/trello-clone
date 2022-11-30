@@ -3,10 +3,12 @@ import { useSelector, useDispatch } from 'react-redux'
 import AddCardButton from '../../ui/CardButton/AddCardButton'
 import { addTitle } from '../../../store/deskSlice'
 import style from './Home.module.scss'
+import TextareaAutosize from 'react-textarea-autosize'
+import { useTitle } from '../../../hooks/useTitle'
+import TitleButton from '../../ui/TitleButton/TitleButton'
 
 const Home = () => {
 	const arr = useSelector(state => state.desk)
-	const dispatch = useDispatch()
 
 	return (
 		<div className={style.content}>
@@ -21,13 +23,7 @@ const Home = () => {
 					<AddCardButton />
 				</div>
 			))}
-			<h2
-				onClick={() => {
-					dispatch(addTitle())
-				}}
-			>
-				Add new title
-			</h2>
+			<TitleButton />
 		</div>
 	)
 }

@@ -1,14 +1,6 @@
 .content {
 	@apply flex flex-row p-10;
 
-	h2 {
-		@apply w-[272px] h-[100%] mt-3 p-3 bg-slate-300;
-
-		&:hover {
-			@apply bg-slate-100 rounded-md cursor-pointer;
-		}
-	}
-
 	.container {
 		@apply w-[272px] bg-[#f2f3f4] p-3 rounded-md m-3 h-[100%];
 

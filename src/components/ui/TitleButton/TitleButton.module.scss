@@ -1,0 +1,35 @@
+.container {
+	@apply h-[100%];
+
+	.titleButton {
+		@apply w-[272px] h-[100%] mt-3 p-3 bg-slate-300;
+
+		&:hover {
+			@apply bg-slate-100 rounded-md cursor-pointer;
+		}
+	}
+
+	.titleArea {
+		@apply resize-none w-[272px] outline-none border-none mt-3 rounded-md;
+	}
+
+	.secondButtonContainer {
+		@apply flex flex-row items-center;
+
+		p {
+			@apply text-[40px] ml-3 mb-2 cursor-pointer text-cyan-700;
+
+			&:hover {
+				@apply text-[#000];
+			}
+		}
+
+		.secondTitleButton {
+			@apply w-auto p-2 bg-[#0079bf] text-cyan-50 rounded-md;
+
+			&:hover {
+				@apply bg-[#026dab];
+			}
+		}
+	}
+}

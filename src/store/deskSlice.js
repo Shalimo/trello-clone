@@ -39,10 +39,10 @@ export const deskSlice = createSlice({
 	name: 'trello',
 	initialState,
 	reducers: {
-		addTitle: state => {
+		addTitle: (state, { payload }) => {
 			const newTitle = {
-				id: 4,
-				title: 'Doing',
+				id: Math.random() * (100 - 1) + 1,
+				title: payload,
 				cards: []
 			}
 			return [...state, newTitle]
