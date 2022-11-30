@@ -20,7 +20,7 @@ const Home = () => {
 							<p>{item.description}</p>
 						</div>
 					))}
-					<AddCardButton />
+					<AddCardButton listID={item.id} />
 				</div>
 			))}
 			<TitleButton />

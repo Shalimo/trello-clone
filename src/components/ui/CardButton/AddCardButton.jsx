@@ -1,10 +1,13 @@
 import React from 'react'
 import { useForm } from '../../../hooks/useForm'
 import TextareaAutosize from 'react-textarea-autosize'
+import { addCard } from '../../../store/deskSlice'
+import { useDispatch } from 'react-redux'
 import style from './AddCardButton.module.scss'
 
-const AddCardButton = () => {
+const AddCardButton = ({ listID }) => {
 	const { isFormOpen, toggleForm, text, handleInputChange } = useForm()
+	const dispatch = useDispatch()
 
 	return (
 		<>
@@ -29,7 +32,15 @@ const AddCardButton = () => {
 			</div>
 			{isFormOpen ? (
 				<div className={style.secondButtonContainer}>
-					<button className={style.secondCardButton}>Add card</button>
+					<button
+						onClick={() => {
+							handleInputChange('')
+							dispatch(addCard({ text, listID }))
+						}}
+						className={style.secondCardButton}
+					>
+						Add card
+					</button>
 					<p
 						onClick={() => {
 							toggleForm()

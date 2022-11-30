@@ -41,15 +41,36 @@ export const deskSlice = createSlice({
 	reducers: {
 		addTitle: (state, { payload }) => {
 			const newTitle = {
-				id: Math.random() * (100 - 1) + 1,
+				id: Math.random() * (100 - 4) + 4,
 				title: payload,
 				cards: []
 			}
 			return [...state, newTitle]
+		},
+		addCard: (state, action) => {
+			const newCard = {
+				id: Math.random() * (100 - 4) + 4,
+				description: action.payload.text
+			}
+
+			const newState = state.map(list => {
+				if (list.id === action.payload.listID) {
+					return {
+						...list,
+						cards: [...list.cards, newCard]
+					}
+				} else {
+					return list
+				}
+			})
+
+			console.log(action.payload)
+
+			return newState
 		}
 	}
 })
 
-export const { addTitle } = deskSlice.actions
+export const { addTitle, addCard } = deskSlice.actions
 
 export default deskSlice.reducer

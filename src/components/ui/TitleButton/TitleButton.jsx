@@ -33,6 +33,7 @@ const TitleButton = () => {
 				<div className={style.secondButtonContainer}>
 					<button
 						onClick={() => {
+							handleInputChange('')
 							dispatch(addTitle(text))
 						}}
 						className={style.secondTitleButton}
