@@ -18,6 +18,7 @@ const TitleButton = () => {
 						handleInputChange(e.target.value)
 					}}
 					autoFocus
+					placeholder='Enter list title...'
 				/>
 			) : (
 				<h2
@@ -26,7 +27,7 @@ const TitleButton = () => {
 						toggleForm()
 					}}
 				>
-					Add new title
+					Add another list
 				</h2>
 			)}
 			{isFormTitleOpen ? (

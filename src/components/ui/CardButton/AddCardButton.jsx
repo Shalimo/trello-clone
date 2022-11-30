@@ -25,6 +25,7 @@ const AddCardButton = ({ listID }) => {
 							handleInputChange(e.target.value)
 						}}
 						autoFocus
+						placeholder='Enter a title for this card...'
 					/>
 				) : (
 					<p>+ Add card</p>
