@@ -33,10 +33,14 @@ const TitleButton = () => {
 			{isFormTitleOpen ? (
 				<div className={style.secondButtonContainer}>
 					<button
-						onClick={() => {
-							handleInputChange('')
-							dispatch(addTitle(text))
-						}}
+						onClick={
+							text.length === 0
+								? null
+								: () => {
+										handleInputChange('')
+										dispatch(addTitle(text))
+								  }
+						}
 						className={style.secondTitleButton}
 					>
 						Add card

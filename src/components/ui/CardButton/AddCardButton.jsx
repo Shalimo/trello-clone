@@ -34,10 +34,14 @@ const AddCardButton = ({ listID }) => {
 			{isFormOpen ? (
 				<div className={style.secondButtonContainer}>
 					<button
-						onClick={() => {
-							handleInputChange('')
-							dispatch(addCard({ text, listID }))
-						}}
+						onClick={
+							text.length === 0
+								? null
+								: () => {
+										handleInputChange('')
+										dispatch(addCard({ text, listID }))
+								  }
+						}
 						className={style.secondCardButton}
 					>
 						Add card

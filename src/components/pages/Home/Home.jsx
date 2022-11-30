@@ -8,6 +8,7 @@ import { useTitle } from '../../../hooks/useTitle'
 import TitleButton from '../../ui/TitleButton/TitleButton'
 import CardList from '../../ui/CardList/CardList'
 import List from '../../ui/List/List'
+import Header from '../../ui/Header/Header'
 import { DragDropContext } from 'react-beautiful-dnd'
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
 
 	return (
 		<DragDropContext onDragEnd={onDragEnd}>
+			<Header />
 			<div className={style.content}>
 				{lists.map(list => (
 					<List key={list.id} list={list} />
