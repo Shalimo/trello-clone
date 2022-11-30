@@ -1,0 +1,18 @@
+.container {
+    @apply w-[272px] bg-[#f2f3f4] p-3 rounded-md;
+
+    h1 {
+        @apply text-lg mb-2;
+    }
+
+    .description {
+        @apply bg-slate-50 p-2 rounded-md  mb-2;
+    }
+
+    .bottomSection {
+        @apply flex flex-row;
+        p {
+            @apply mr-4
+        }
+    }
+}
