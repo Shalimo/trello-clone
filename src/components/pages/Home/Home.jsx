@@ -6,25 +6,23 @@ import style from './Home.module.scss'
 import TextareaAutosize from 'react-textarea-autosize'
 import { useTitle } from '../../../hooks/useTitle'
 import TitleButton from '../../ui/TitleButton/TitleButton'
+import CardList from '../../ui/CardList/CardList'
+import List from '../../ui/List/List'
+import { DragDropContext } from 'react-beautiful-dnd'
 
 const Home = () => {
-	const arr = useSelector(state => state.desk)
+	const lists = useSelector(state => state.desk)
+	const onDragEnd = () => {}
 
 	return (
-		<div className={style.content}>
-			{arr.map(item => (
-				<div key={item.id} className={style.container}>
-					<h1>{item.title}</h1>
-					{item.cards.map(item => (
-						<div key={item.id} className={style.description}>
-							<p>{item.description}</p>
-						</div>
-					))}
-					<AddCardButton listID={item.id} />
-				</div>
-			))}
-			<TitleButton />
-		</div>
+		<DragDropContext onDragEnd={onDragEnd}>
+			<div className={style.content}>
+				{lists.map(list => (
+					<List key={list.id} list={list} />
+				))}
+				<TitleButton />
+			</div>
+		</DragDropContext>
 	)
 }
 

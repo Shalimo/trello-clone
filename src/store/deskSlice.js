@@ -2,34 +2,38 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = [
 	{
-		id: 1,
+		id: `list-${1}`,
 		title: 'To Do',
 		cards: [
 			{
-				id: 1,
+				id: `card-${1}`,
 				description: 'Lorem blablabla'
 			},
 			{
-				id: 2,
+				id: `card-${2}`,
 				description: 'Lorem blablablabla'
 			}
 		]
 	},
 	{
-		id: 2,
+		id: `list-${2}`,
 		title: 'Backlog',
 		cards: [
 			{
-				id: 1,
+				id: `card-${3}`,
 				description: 'Lorem blablabla'
 			},
 			{
-				id: 2,
+				id: `card-${4}`,
 				description: 'Lorem blablablabla'
 			},
 			{
-				id: 3,
+				id: `card-${5}`,
 				description: 'Lorem blablablablabla'
+			},
+			{
+				id: `card-${6}`,
+				description: 'Lorem blablablablablablablablablabla'
 			}
 		]
 	}
@@ -41,7 +45,7 @@ export const deskSlice = createSlice({
 	reducers: {
 		addTitle: (state, { payload }) => {
 			const newTitle = {
-				id: Math.random() * (100 - 4) + 4,
+				id: `list-${Math.random() * (100 - 3) + 3}`,
 				title: payload,
 				cards: []
 			}
@@ -49,7 +53,7 @@ export const deskSlice = createSlice({
 		},
 		addCard: (state, action) => {
 			const newCard = {
-				id: Math.random() * (100 - 4) + 4,
+				id: `card-${Math.random() * (100 - 7) + 7}`,
 				description: action.payload.text
 			}
 

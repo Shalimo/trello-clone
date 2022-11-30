@@ -1,0 +1,7 @@
+.container {
+	@apply w-[272px] bg-[#f2f3f4] p-3 rounded-md m-3 h-[100%];
+
+	h1 {
+		@apply text-lg mb-2;
+	}
+}
