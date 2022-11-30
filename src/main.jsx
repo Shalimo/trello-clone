@@ -6,7 +6,7 @@ import Home from './components/pages/Home/Home'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <Provider store={store}>
-    <Home />
-  </Provider>
+	<Provider store={store}>
+		<Home />
+	</Provider>
 )

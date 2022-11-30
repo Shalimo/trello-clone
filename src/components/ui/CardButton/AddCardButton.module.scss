@@ -1,34 +1,34 @@
 .cardButton {
-    @apply flex flex-row p-1;
-    p {
-        @apply mr-4;
-    }
+	@apply flex flex-row p-1;
+	p {
+		@apply mr-4;
+	}
 
-    &:hover {
-        @apply bg-slate-300 rounded-md cursor-pointer;
-    }
+	&:hover {
+		@apply bg-slate-300 rounded-md cursor-pointer;
+	}
 
-    .textArea {
-        @apply resize-none w-[100%] outline-none border-none;
-    }
+	.textArea {
+		@apply resize-none w-[100%] outline-none border-none;
+	}
 }
 
 .secondButtonContainer {
-    @apply flex flex-row items-center;
+	@apply flex flex-row items-center;
 
-    p {
-        @apply text-[40px] mt-[5px] ml-3 cursor-pointer text-cyan-700;
+	p {
+		@apply text-[40px] mt-[5px] ml-3 cursor-pointer text-cyan-700;
 
-        &:hover {
-            @apply text-[#000];
-        }
-    }
+		&:hover {
+			@apply text-[#000];
+		}
+	}
 
-    .secondCardButton {
-        @apply w-auto p-2 bg-[#0079bf] text-cyan-50 rounded-md mt-3;
+	.secondCardButton {
+		@apply w-auto p-2 bg-[#0079bf] text-cyan-50 rounded-md mt-3;
 
-        &:hover {
-            @apply bg-[#026dab];
-        }
-    }
+		&:hover {
+			@apply bg-[#026dab];
+		}
+	}
 }

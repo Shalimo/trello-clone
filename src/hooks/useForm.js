@@ -1,16 +1,16 @@
-import { useState } from "react"
+import { useState } from 'react'
 
 export const useForm = () => {
-    const [isFormOpen, setIsForOpen] = useState(false)
-    const [text, setText] = useState('')
+	const [isFormOpen, setIsForOpen] = useState(false)
+	const [text, setText] = useState('')
 
-    const toggleForm = () => {
-        setIsForOpen(!isFormOpen)
-    }
+	const toggleForm = () => {
+		setIsForOpen(!isFormOpen)
+	}
 
-    const handleInputChange = (value) => {
-        setText(value)
-    }
+	const handleInputChange = value => {
+		setText(value)
+	}
 
-    return {isFormOpen, toggleForm, text, handleInputChange}
+	return { isFormOpen, toggleForm, text, handleInputChange }
 }
