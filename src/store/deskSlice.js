@@ -27,6 +27,10 @@ const initialState = [
                 id: 2,
                 description: 'Lorem blablablabla'
             },
+            {
+                id: 3,
+                description: 'Lorem blablablablabla'
+            },
         ]
     },
 ]
@@ -41,6 +45,6 @@ export const deskSlice = createSlice({
     }
 })
 
-export const { decrement } = deskSlice.actions
+export const { deskX2 } = deskSlice.actions
 
 export default deskSlice.reducer

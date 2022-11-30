@@ -1,9 +1,11 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import AddCardButton from '../../ui/CardButton/AddCardButton'
 import style from './Home.module.scss'
 
 const Home = () => {
   const arr = useSelector((state) => state.desk)
+  const dispatch = useDispatch()
 
   return (
     <div className={style.content}>
@@ -15,10 +17,7 @@ const Home = () => {
               <p>{item.description}</p>
             </div>
           ))}
-          <div className={style.bottomSection}>
-            <p>+</p>
-            <p>Add card</p>
-          </div>
+          <AddCardButton/>
         </div> 
       ))}
     </div>

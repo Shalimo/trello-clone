@@ -11,16 +11,5 @@
         .description {
             @apply bg-slate-50 p-2 rounded-md  mb-2;
         }
-    
-        .bottomSection {
-            @apply flex flex-row p-1;
-            p {
-                @apply mr-4;
-            }
-
-            &:hover {
-                @apply bg-slate-300 rounded-md cursor-pointer;
-            }
-        }
     }
 }
