@@ -4,9 +4,9 @@ import CardList from '../CardList/CardList'
 import AddCardButton from '../CardButton/AddCardButton'
 import { Droppable } from 'react-beautiful-dnd'
 
-const List = ({ list }) => {
+const List = ({ list, cards, id }) => {
 	return (
-		<Droppable droppableId={String(list.id)}>
+		<Droppable droppableId={String(id)}>
 			{provided => (
 				<div
 					{...provided.droppableProps}
@@ -14,10 +14,10 @@ const List = ({ list }) => {
 					className={style.container}
 				>
 					<h1>{list.title}</h1>
-					{list.cards.map((card, index) => (
+					{cards.map((card, index) => (
 						<CardList key={card.id} card={card} index={index} id={card.id} />
 					))}
-					<AddCardButton listID={list.id} />
+					<AddCardButton listID={id} />
 					{provided.placeholder}
 				</div>
 			)}

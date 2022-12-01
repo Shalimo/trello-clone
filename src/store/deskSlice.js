@@ -71,10 +71,38 @@ export const deskSlice = createSlice({
 			console.log(action.payload)
 
 			return newState
+		},
+		deleteCard: (state, { payload }) => {
+			const { id } = payload
+			return (state = state.map(list => {
+				return { ...list, cards: list.cards.filter(card => card.id !== id) }
+			}))
+		},
+		sort: (state, action) => {
+			const {
+				droppableIdStart,
+				droppableIdEnd,
+				droppableIndexStart,
+				droppableIndexEnd,
+				draggableId,
+				type
+			} = action.payload
+
+			const newState = [...state]
+
+			if (droppableIdStart === droppableIdEnd) {
+				const list = state.find(list => droppableIdStart === list.id)
+				const card = list.cards.splice(droppableIndexStart, 1)
+				list.cards.splice(droppableIndexEnd, 0, ...card)
+			}
+
+			console.log(state.find(item => droppableIdStart === item.id))
+
+			return newState
 		}
 	}
 })
 
-export const { addTitle, addCard } = deskSlice.actions
+export const { addTitle, addCard, deleteCard, sort } = deskSlice.actions
 
 export default deskSlice.reducer
