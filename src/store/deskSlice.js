@@ -51,6 +51,10 @@ export const deskSlice = createSlice({
 			}
 			return [...state, newTitle]
 		},
+		deleteTitle: (state, { payload }) => {
+			const { id } = payload
+			return (state = state.filter(list => list.id !== id))
+		},
 		addCard: (state, action) => {
 			const newCard = {
 				id: `card-${Math.random() * (100 - 7) + 7}`,
@@ -103,6 +107,7 @@ export const deskSlice = createSlice({
 	}
 })
 
-export const { addTitle, addCard, deleteCard, sort } = deskSlice.actions
+export const { addTitle, addCard, deleteCard, sort, deleteTitle } =
+	deskSlice.actions
 
 export default deskSlice.reducer
