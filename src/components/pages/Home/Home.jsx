@@ -31,6 +31,7 @@ const Home = () => {
 	return (
 		<DragDropContext onDragEnd={onDragEnd}>
 			<Header />
+			<h1 className={style.mainTitle}>My board</h1>
 			<div className={style.content}>
 				{lists.map(list => (
 					<List key={list.id} cards={list.cards} list={list} id={list.id} />

@@ -6,6 +6,7 @@ const Header = () => {
 	return (
 		<div className={style.container}>
 			<h1>Clone Trello</h1>
+			<input placeholder='Search' />
 			<img src={me} />
 		</div>
 	)

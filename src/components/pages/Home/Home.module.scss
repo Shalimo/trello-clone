@@ -1,3 +1,7 @@
+.mainTitle {
+	@apply ml-[53px] mt-8 text-4xl font-semibold text-fuchsia-50;
+}
+
 .content {
 	@apply flex flex-row p-10 flex-wrap;
 }
